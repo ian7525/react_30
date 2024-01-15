@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const AnologClockBody = styled.div`
+export const AnologClockBody = styled.body`
   background: #bbe1fa;
   font-family: 'poppins', sans-serif;
 `

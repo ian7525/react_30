@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const AgeBody = styled.div`
+export const AgeBody = styled.body`
   background: #e9e9ea;
   font-family: 'poppins', sans-serif;
 `
