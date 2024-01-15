@@ -7,13 +7,6 @@ import { AgeBody, AgeContainer } from './style'
 interface Props {}
 
 const AgeCalculator: React.FC<Props> = ({}) => {
-  //   let container = document.querySelector('.AgeContainer')
-  //   let dateInput = container?.querySelector('.date-input .date input')
-  //   let monthInput = container?.querySelector('.date-input .month input')
-  //   let yearInput = container?.querySelector('.date-input .year input')
-  //   let submitBtn = container?.querySelector('.date-input .submit-btn')
-  //   let otherResultsBox = container?.querySelector('.other-results')
-
   const [resultDate, setResultDate] = useState(0)
   const [resultMonth, setResultMonth] = useState(0)
   const [resultYear, setResultYear] = useState(0)
