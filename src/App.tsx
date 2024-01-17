@@ -6,6 +6,7 @@ import AgeCalculator from './pages/ageCalculator'
 import AnologClock from './pages/anologClock'
 import BarcodeGenerator from './pages/barcodeGenerator'
 import BmiCalculator from './pages/bmiCalculator'
+import BoxShadowGenerator from './pages/boxShadowGenerator'
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             <li>
               <Link to="/bmi">BMI Calculator</Link>
             </li>
+            <li>
+              <Link to="/box-shadow">Box Shadow Generator</Link>
+            </li>
           </ul>
         </nav>
 
@@ -37,6 +41,7 @@ function App() {
           <Route path="/analog-clock" element={<AnologClock />} />
           <Route path="/barcode" element={<BarcodeGenerator />} />
           <Route path="/bmi" element={<BmiCalculator />} />
+          <Route path="/box-shadow" element={<BoxShadowGenerator />} />
         </Routes>
       </div>
     </Router>
