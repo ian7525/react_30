@@ -6,8 +6,8 @@ export const CocktailBody = styled.body`
 `
 
 interface StyledDivProps {
-  infoBoxDisplay: string
-  dispMsgDisplay: string
+  infoboxdisplay: string
+  dispmsgdisplay: string
 }
 export const CocktailContainer = styled.div<StyledDivProps>`
   padding: 20px;
@@ -44,7 +44,7 @@ export const CocktailContainer = styled.div<StyledDivProps>`
   }
 
   .display-msg {
-    display: ${(props) => (props.dispMsgDisplay ? props.dispMsgDisplay : '')};
+    display: ${(props) => (props.dispmsgdisplay ? props.dispmsgdisplay : '')};
     color: grey;
     font-size: 13px;
     text-align: center;
@@ -70,7 +70,6 @@ export const CocktailContainer = styled.div<StyledDivProps>`
   }
 
   .info-box {
-    display: ${(props) => (props.infoBoxDisplay ? props.infoBoxDisplay : '')};
     .cocktail-name {
       height: 35px;
       background: #00a292;
@@ -138,7 +137,8 @@ export const CocktailContainer = styled.div<StyledDivProps>`
   }
 
   .info-box {
-    display: none;
+    display: ${(props) =>
+      props.infoboxdisplay ? props.infoboxdisplay : 'none'};
   }
 
   &::selection {

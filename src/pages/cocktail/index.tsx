@@ -6,22 +6,14 @@ interface Props {}
 
 const CocktailSearch: React.FC<Props> = ({}) => {
   const [cocktail, setCocktail] = useState('')
+  const [ingredientData, setIngredientData] = useState([''])
 
-  const [ingredientsBox, setIngredientsBox] = useState('')
   const [instruction, setInstruction] = useState('')
   const [cocktailImg, setCocktailImg] = useState('')
   const [cocktailNameText, setCocktailNameText] = useState('')
 
-  const [infoBoxDisplay, setInfoBoxDisplay] = useState('')
+  const [infoBoxDisplay, setInfoBoxDisplay] = useState('none')
   const [dispMsgDisplay, setDispMsgDisplay] = useState('')
-
-  const getIngredients = (ingredient: any) => {
-    console.log('getIngredients ingredient=', ingredient)
-    return `
-      <ul>
-        <li>{ingredient}</li>
-      </ul>`
-  }
 
   const getCocktailInfo = (cocktailName: any) => {
     console.log('cocktailName=', cocktailName)
@@ -35,9 +27,7 @@ const CocktailSearch: React.FC<Props> = ({}) => {
       .then((data) => {
         let myCocktail = data.drinks[0]
         setCocktailImg(myCocktail.strDrinkThumb)
-        setCocktailNameText(
-          `<i class="fa-solid fa-martini-glass-citrus"></i> <span>${myCocktail.strDrink}</span>`
-        )
+        setCocktailNameText(myCocktail.strDrink)
         let count = 1
         let ingredients = []
 
@@ -52,11 +42,8 @@ const CocktailSearch: React.FC<Props> = ({}) => {
             ingredients.push(`${measure} ${ingredient}`)
           }
         }
-        console.log('ingredients=', ingredients)
-        ingredients.forEach((ingredient) => {
-          setIngredientsBox(getIngredients(ingredient))
-        })
-        console.log('ingredientsBox=', ingredientsBox)
+        setIngredientData(ingredients)
+        console.log('ingredientData=', ingredientData)
         setInstruction(myCocktail.strInstructions)
       })
   }
@@ -64,8 +51,8 @@ const CocktailSearch: React.FC<Props> = ({}) => {
   return (
     <CocktailBody>
       <CocktailContainer
-        infoBoxDisplay={infoBoxDisplay}
-        dispMsgDisplay={dispMsgDisplay}
+        infoboxdisplay={infoBoxDisplay}
+        dispmsgdisplay={dispMsgDisplay}
       >
         <div className="search-box">
           <i className="fa-solid fa-magnifying-glass"></i>
@@ -88,11 +75,26 @@ const CocktailSearch: React.FC<Props> = ({}) => {
             <img src={cocktailImg} alt="Loading..." />
           </div>
           <div className="cocktail-name">
-            <span className="cocktail">{cocktailNameText}</span>
+            <span className="cocktail">
+              {cocktailNameText && (
+                <>
+                  <i className="fa-solid fa-martini-glass-citrus"></i>{' '}
+                  <span>{cocktailNameText}</span>
+                </>
+              )}
+            </span>
           </div>
           <div className="ingredients-box">
             <h3>Ingredients</h3>
-            <div className="ingredients">{ingredientsBox}</div>
+            <div className="ingredients">
+              {ingredientData.length && (
+                <ul>
+                  {ingredientData.map((ingredient, index) => (
+                    <li key={index}>{ingredient}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
             <div className="instructions-box">
               <h3>Instruction</h3>
               <span className="instruction">{instruction}</span>
