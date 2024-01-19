@@ -8,6 +8,7 @@ import BarcodeGenerator from './pages/barcodeGenerator'
 import BmiCalculator from './pages/bmiCalculator'
 import BoxShadowGenerator from './pages/boxShadowGenerator'
 import CocktailSearch from './pages/cocktail'
+import CountryGuide from './pages/countryGuideApp'
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
             <li>
               <Link to="/cocktail">Cocktail Search App</Link>
             </li>
+            <li>
+              <Link to="/country-guide">Country Guide App</Link>
+            </li>
           </ul>
         </nav>
 
@@ -47,6 +51,7 @@ function App() {
           <Route path="/bmi" element={<BmiCalculator />} />
           <Route path="/box-shadow" element={<BoxShadowGenerator />} />
           <Route path="/cocktail" element={<CocktailSearch />} />
+          <Route path="/country-guide" element={<CountryGuide />} />
         </Routes>
       </div>
     </Router>
