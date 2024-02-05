@@ -9,6 +9,7 @@ import BmiCalculator from './pages/bmiCalculator'
 import BoxShadowGenerator from './pages/boxShadowGenerator'
 import CocktailSearch from './pages/cocktail'
 import CountryGuide from './pages/countryGuideApp'
+import CurrencyConverter from './pages/currencyConverter'
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
             <li>
               <Link to="/country-guide">Country Guide App</Link>
             </li>
+            <li>
+              <Link to="/currency-converter">Currency Converter</Link>
+            </li>
           </ul>
         </nav>
 
@@ -52,6 +56,7 @@ function App() {
           <Route path="/box-shadow" element={<BoxShadowGenerator />} />
           <Route path="/cocktail" element={<CocktailSearch />} />
           <Route path="/country-guide" element={<CountryGuide />} />
+          <Route path="/currency-converter" element={<CurrencyConverter />} />
         </Routes>
       </div>
     </Router>
