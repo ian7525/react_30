@@ -10,6 +10,7 @@ import BoxShadowGenerator from './pages/boxShadowGenerator'
 import CocktailSearch from './pages/cocktail'
 import CountryGuide from './pages/countryGuideApp'
 import CurrencyConverter from './pages/currencyConverter'
+import DigitalClock from './pages/digitalClock'
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
             <li>
               <Link to="/currency-converter">Currency Converter</Link>
             </li>
+            <li>
+              <Link to="/digital-clock">Digital Clock</Link>
+            </li>
           </ul>
         </nav>
 
@@ -57,6 +61,7 @@ function App() {
           <Route path="/cocktail" element={<CocktailSearch />} />
           <Route path="/country-guide" element={<CountryGuide />} />
           <Route path="/currency-converter" element={<CurrencyConverter />} />
+          <Route path="/digital-clock" element={<DigitalClock />} />
         </Routes>
       </div>
     </Router>

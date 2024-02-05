@@ -9,22 +9,22 @@ const CurrencyConverter: React.FC<props> = ({}) => {
   const [fromInputActive, setFromInputActive] = useState(false)
   const [toInputActive, setToInputActive] = useState(false)
 
-  const getSymbols = () => {
-    let fromLi = ''
-    let toLi = ''
-    for (currency_code in country_list) {
-      fromLi += `<li onclick="getFromValue('${currency_code}')"><img src="https://flagsapi.com/${country_list[currency_code]}/flat/64.png" alt="">${currency_code}</li>`
-      toLi += `<li onclick="getToValue('${currency_code}')"><img src="https://flagsapi.com/${country_list[currency_code]}/flat/64.png" alt="">${currency_code}</li>`
-    }
-    fromOptionsBox.innerHTML = fromLi
-    toOptionsBox.innerHTML = toLi
-  }
+  // const getSymbols = () => {
+  //   let fromLi = ''
+  //   let toLi = ''
+  //   for (currency_code in country_list) {
+  //     fromLi += `<li onclick="getFromValue('${currency_code}')"><img src="https://flagsapi.com/${country_list[currency_code]}/flat/64.png" alt="">${currency_code}</li>`
+  //     toLi += `<li onclick="getToValue('${currency_code}')"><img src="https://flagsapi.com/${country_list[currency_code]}/flat/64.png" alt="">${currency_code}</li>`
+  //   }
+  //   fromOptionsBox.innerHTML = fromLi
+  //   toOptionsBox.innerHTML = toLi
+  // }
 
-  const getFromValue = (country) => {
-    fromInputFlag.src = `https://flagsapi.com/${country_list[country]}/flat/64.png`
-    fromInput.value = country
-    fromOptionsBox.classList.remove('active')
-  }
+  // const getFromValue = (country) => {
+  //   fromInputFlag.src = `https://flagsapi.com/${country_list[country]}/flat/64.png`
+  //   fromInput.value = country
+  //   fromOptionsBox.classList.remove('active')
+  // }
 
   return (
     <CurrencyConverterBody>
@@ -62,17 +62,17 @@ const CurrencyConverter: React.FC<props> = ({}) => {
                   : 'from-country-options'
               }
             >
-              {Object.keys(countryList).map((key) => {
+              {/* {Object.keys(countryList).map((key) => {
                 return (
-                  <li onClick={() => getFromValue(key)}>
-                    <img
-                      src="https://flagsapi.com/${country_list[currency_code]}/flat/64.png"
-                      alt=""
-                    />
-                    {key}
-                  </li>
+                  // <li onClick={() => getFromValue(key)}>
+                  //   <img
+                  //     src="https://flagsapi.com/${country_list[currency_code]}/flat/64.png"
+                  //     alt=""
+                  //   />
+                  //   {key}
+                  // </li>
                 )
-              })}
+              })} */}
             </div>
           </div>
           <div className="switch-btn">
@@ -104,7 +104,7 @@ const CurrencyConverter: React.FC<props> = ({}) => {
                   : 'to-country-options'
               }
             >
-              {countryList.map((v) => (
+              {/* {countryList.map((v) => (
                 <li onClick="getFromValue('${currency_code}')">
                   <img
                     src="https://flagsapi.com/${country_list[currency_code]}/flat/64.png"
@@ -112,7 +112,7 @@ const CurrencyConverter: React.FC<props> = ({}) => {
                   />
                   ${currency_code}
                 </li>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
