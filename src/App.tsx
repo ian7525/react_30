@@ -11,6 +11,7 @@ import CocktailSearch from './pages/cocktail'
 import CountryGuide from './pages/countryGuideApp'
 import CurrencyConverter from './pages/currencyConverter'
 import DigitalClock from './pages/digitalClock'
+import DynamicCalender from './pages/dynamicCalender'
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
             <li>
               <Link to="/digital-clock">Digital Clock</Link>
             </li>
+            <li>
+              <Link to="/dynamic-calender">Dynamic Calender</Link>
+            </li>
           </ul>
         </nav>
 
@@ -62,6 +66,7 @@ function App() {
           <Route path="/country-guide" element={<CountryGuide />} />
           <Route path="/currency-converter" element={<CurrencyConverter />} />
           <Route path="/digital-clock" element={<DigitalClock />} />
+          <Route path="/dynamic-calender" element={<DynamicCalender />} />
         </Routes>
       </div>
     </Router>
