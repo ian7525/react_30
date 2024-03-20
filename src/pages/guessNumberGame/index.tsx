@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 
-// import { DynamicCalenderBody, DynamicCalenderContainer } from './style'
+import { Body, Container, ResultBox } from './style'
 
 interface Props {}
 
 const GuessNumberGame: React.FC<Props> = ({}) => {
   return (
-    <></>
+    <>
+      <Body>
+        <Container></Container>
+        <ResultBox></ResultBox>
+      </Body>
+    </>
     // <DynamicCalenderBody>
     //   <DynamicCalenderContainer></DynamicCalenderContainer>
     // </DynamicCalenderBody>

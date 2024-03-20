@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 
-// import { DynamicCalenderBody, DynamicCalenderContainer } from './style'
+import { Body, Container, GlobalStyles, MainWrapper, ResultDiv } from './style'
 
 interface Props {}
 
 const QuizApp: React.FC<Props> = ({}) => {
   return (
-    <></>
-    // <DynamicCalenderBody>
-    //   <DynamicCalenderContainer></DynamicCalenderContainer>
-    // </DynamicCalenderBody>
+    <>
+      <GlobalStyles />
+      <Body>
+        <Container></Container>
+      </Body>
+    </>
   )
 }
 
